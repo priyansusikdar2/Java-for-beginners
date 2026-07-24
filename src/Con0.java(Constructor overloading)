@@ -1,0 +1,46 @@
+class Student1 {
+    int rollNo;
+    String name;
+
+    // Default Constructor
+    Student1() {
+        this.rollNo = 0;
+        this.name = "Unknown";
+    }
+
+    // Constructor with one parameter
+    Student1(int r) {
+        this.rollNo = r;
+        this.name = "Unknown";
+    }
+
+    // Constructor with two parameters
+    Student1(int r, String n) {
+        this.rollNo = r;
+        this.name = n;
+    }
+
+    void display() {
+        System.out.println("Roll No: " + rollNo);
+        System.out.println("Name: " + name);
+        System.out.println();
+    }
+}
+
+public class ConO {
+    public static void main(String[] args) {
+
+        Student1 s1 = new Student1();               // Default constructor
+        Student1 s2 = new Student1(101);            // One-parameter constructor
+        Student1 s3 = new Student1(102, "Rahul");   // Two-parameter constructor
+
+        System.out.println("Student 1:");
+        s1.display();
+
+        System.out.println("Student 2:");
+        s2.display();
+
+        System.out.println("Student 3:");
+        s3.display();
+    }
+}
