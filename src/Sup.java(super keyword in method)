@@ -1,0 +1,17 @@
+class coding {
+    void show() {
+        System.out.println("This is a coding Class");
+    }
+}
+class Student2 extends coding {
+    void display() {
+        super.show();
+        System.out.println("Students are learning Coding");
+    }
+}
+public class Sup {
+    public static void main(String args[]){
+        Student2 pr = new Student2();
+        pr.display();
+    }
+}
