@@ -1,37 +1,56 @@
 import java.util.Scanner;
 
+/**
+ * PrimeRange.java
+ *
+ * This program prints all prime numbers between
+ * a user-specified lower and upper bound.
+ */
 public class PrimeRange {
+
+    /**
+     * Checks whether a given number is prime.
+     *
+     * @param n Number to check
+     * @return true if prime, otherwise false
+     */
+    public static boolean isPrime(int n) {
+
+        if (n <= 1) {
+            return false;
+        }
+
+        // Check divisibility up to the square root of n
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
 
-        // Input limits
+        // Read range from the user
         System.out.print("Enter lower bound: ");
         int lower = scanner.nextInt();
+
         System.out.print("Enter upper bound: ");
         int upper = scanner.nextInt();
 
-        System.out.println("Prime numbers between " + lower + " and " + upper + " are:");
+        System.out.println("\nPrime numbers between " + lower + " and " + upper + " are:");
 
-        // Loop through the given range
+        // Print all prime numbers in the range
         for (int i = lower; i <= upper; i++) {
             if (isPrime(i)) {
                 System.out.print(i + " ");
             }
         }
-        scanner.close();
-    }
 
-    // Helper method to check if a number is prime
-    public static boolean isPrime(int n) {
-        if (n <= 1) {
-            return false; // 0 and 1 are not prime numbers
-        }
-        // Check for factors up to the square root of n
-        for (int i = 2; i*i <= n; i++) {
-            if (n % i == 0) {
-                return false; // Found a factor, so it's not prime
-            }
-        }
-        return true; // No factors found, it is prime
+        System.out.println();
+        scanner.close();
     }
 }
