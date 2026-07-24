@@ -1,0 +1,37 @@
+class Calculator {
+
+    int result = 0;
+
+    Calculator add(int x) {
+        result += x;
+        return this;
+    }
+
+    Calculator subtract(int x) {
+        result -= x;
+        return this;
+    }
+
+    Calculator multiply(int x) {
+        result *= x;
+        return this;
+    }
+
+    void display() {
+        System.out.println("Result = " + result);
+    }
+}
+
+public class Cal {
+
+    public static void main(String[] args) {
+
+        Calculator c = new Calculator();
+
+        c.add(10)
+                .add(5)
+                .subtract(3)
+                .multiply(2)
+                .display();
+    }
+}
